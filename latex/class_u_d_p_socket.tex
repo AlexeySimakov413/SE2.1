@@ -1,0 +1,258 @@
+\doxysection{UDPSocket Class Reference}
+\hypertarget{class_u_d_p_socket}{}\label{class_u_d_p_socket}\index{UDPSocket@{UDPSocket}}
+
+
+{\ttfamily \#include $<$Practical\+Socket.\+h$>$}
+
+Inheritance diagram for UDPSocket\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_u_d_p_socket}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_u_d_p_socket_a4f86f3023f5a08f6355802599a10e100}{UDPSocket}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+\mbox{\hyperlink{class_u_d_p_socket_a14dcb55c4b60b12d4a7fff648cbb825f}{UDPSocket}} (unsigned short local\+Port)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+\mbox{\hyperlink{class_u_d_p_socket_af19281c523f15ed30d7d78f09033713d}{UDPSocket}} (const string \&local\+Address, unsigned short local\+Port)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_u_d_p_socket_a7482e8e61cef160e1a7c0d6ac15c01be}{disconnect}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_u_d_p_socket_a41a3595e226f273953cbd38618af5d5b}{send\+To}} (const void \texorpdfstring{$\ast$}{*}buffer, int buffer\+Len, const string \&foreign\+Address, unsigned short foreign\+Port)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+int \mbox{\hyperlink{class_u_d_p_socket_abcd5c064e2496bd8b1888fd4e1b68949}{recv\+From}} (void \texorpdfstring{$\ast$}{*}buffer, int buffer\+Len, string \&source\+Address, unsigned short \&source\+Port)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_u_d_p_socket_a4dcfff33b45d1b84b5a602fc6f4a27f8}{set\+Multicast\+TTL}} (unsigned char multicast\+TTL)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_u_d_p_socket_a1b20c1e8bd49a9bd9b53dd4f1c8d4c11}{join\+Group}} (const string \&multicast\+Group)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_u_d_p_socket_a78835eaeca8a5ac039b4579c795e3640}{leave\+Group}} (const string \&multicast\+Group)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_communicating_socket}{Communicating\+Socket}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect}} (const string \&foreign\+Address, unsigned short foreign\+Port)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}{send}} (const void \texorpdfstring{$\ast$}{*}buffer, int buffer\+Len)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+int \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{recv}} (void \texorpdfstring{$\ast$}{*}buffer, int buffer\+Len)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+string \mbox{\hyperlink{class_communicating_socket_a13f9eca30ef56836cf23c163c848c09e}{get\+Foreign\+Address}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+unsigned short \mbox{\hyperlink{class_communicating_socket_a184fbb4775184b87ebd886a5587eb1a3}{get\+Foreign\+Port}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_socket}{Socket}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket_aeac4eb6379a543d38ed88977d3b6630a}{\texorpdfstring{$\sim$}{\string~}\+Socket}} ()
+\item 
+string \mbox{\hyperlink{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}{get\+Local\+Address}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+unsigned short \mbox{\hyperlink{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}{get\+Local\+Port}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_socket_a773fe4a35146002de76952e16fdebcfa}{set\+Local\+Port}} (unsigned short local\+Port)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}{set\+Local\+Address\+And\+Port}} (const string \&local\+Address, unsigned short local\+Port=0)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_socket}{Socket}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_socket_ac5060aeb501044044351d5a85b3fc95f}{clean\+Up}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+static unsigned short \mbox{\hyperlink{class_socket_a982c63b25c5b756321a74074a275adbc}{resolve\+Service}} (const string \&service, const string \&protocol="{}tcp"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_communicating_socket}{Communicating\+Socket}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Communicating\+Socket} (int type, int protocol)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+{\bfseries Communicating\+Socket} (int new\+Conn\+SD)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_socket}{Socket}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Socket} (int type, int protocol)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+{\bfseries Socket} (int sock\+Desc)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_socket}{Socket}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries sock\+Desc}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+UDP socket class 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_u_d_p_socket_a4f86f3023f5a08f6355802599a10e100}\index{UDPSocket@{UDPSocket}!UDPSocket@{UDPSocket}}
+\index{UDPSocket@{UDPSocket}!UDPSocket@{UDPSocket}}
+\doxysubsubsection{\texorpdfstring{UDPSocket()}{UDPSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_u_d_p_socket_a4f86f3023f5a08f6355802599a10e100} 
+UDPSocket\+::\+UDPSocket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Construct a UDP socket 
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if unable to create UDP socket \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_u_d_p_socket_a14dcb55c4b60b12d4a7fff648cbb825f}\index{UDPSocket@{UDPSocket}!UDPSocket@{UDPSocket}}
+\index{UDPSocket@{UDPSocket}!UDPSocket@{UDPSocket}}
+\doxysubsubsection{\texorpdfstring{UDPSocket()}{UDPSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_u_d_p_socket_a14dcb55c4b60b12d4a7fff648cbb825f} 
+UDPSocket\+::\+UDPSocket (\begin{DoxyParamCaption}\item[{unsigned short}]{local\+Port}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Construct a UDP socket with the given local port 
+\begin{DoxyParams}{Parameters}
+{\em local\+Port} & local port \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if unable to create UDP socket \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_u_d_p_socket_af19281c523f15ed30d7d78f09033713d}\index{UDPSocket@{UDPSocket}!UDPSocket@{UDPSocket}}
+\index{UDPSocket@{UDPSocket}!UDPSocket@{UDPSocket}}
+\doxysubsubsection{\texorpdfstring{UDPSocket()}{UDPSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_u_d_p_socket_af19281c523f15ed30d7d78f09033713d} 
+UDPSocket\+::\+UDPSocket (\begin{DoxyParamCaption}\item[{const string \&}]{local\+Address}{, }\item[{unsigned short}]{local\+Port}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Construct a UDP socket with the given local port and address 
+\begin{DoxyParams}{Parameters}
+{\em local\+Address} & local address \\
+\hline
+{\em local\+Port} & local port \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if unable to create UDP socket \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_u_d_p_socket_a7482e8e61cef160e1a7c0d6ac15c01be}\index{UDPSocket@{UDPSocket}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!UDPSocket@{UDPSocket}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily \label{class_u_d_p_socket_a7482e8e61cef160e1a7c0d6ac15c01be} 
+void UDPSocket\+::disconnect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Unset foreign address and port \begin{DoxyReturn}{Returns}
+true if disassociation is successful 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if unable to disconnect UDP socket \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_u_d_p_socket_a1b20c1e8bd49a9bd9b53dd4f1c8d4c11}\index{UDPSocket@{UDPSocket}!joinGroup@{joinGroup}}
+\index{joinGroup@{joinGroup}!UDPSocket@{UDPSocket}}
+\doxysubsubsection{\texorpdfstring{joinGroup()}{joinGroup()}}
+{\footnotesize\ttfamily \label{class_u_d_p_socket_a1b20c1e8bd49a9bd9b53dd4f1c8d4c11} 
+void UDPSocket\+::join\+Group (\begin{DoxyParamCaption}\item[{const string \&}]{multicast\+Group}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Join the specified multicast group 
+\begin{DoxyParams}{Parameters}
+{\em multicast\+Group} & multicast group address to join \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if unable to join group \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_u_d_p_socket_a78835eaeca8a5ac039b4579c795e3640}\index{UDPSocket@{UDPSocket}!leaveGroup@{leaveGroup}}
+\index{leaveGroup@{leaveGroup}!UDPSocket@{UDPSocket}}
+\doxysubsubsection{\texorpdfstring{leaveGroup()}{leaveGroup()}}
+{\footnotesize\ttfamily \label{class_u_d_p_socket_a78835eaeca8a5ac039b4579c795e3640} 
+void UDPSocket\+::leave\+Group (\begin{DoxyParamCaption}\item[{const string \&}]{multicast\+Group}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Leave the specified multicast group 
+\begin{DoxyParams}{Parameters}
+{\em multicast\+Group} & multicast group address to leave \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if unable to leave group \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_u_d_p_socket_abcd5c064e2496bd8b1888fd4e1b68949}\index{UDPSocket@{UDPSocket}!recvFrom@{recvFrom}}
+\index{recvFrom@{recvFrom}!UDPSocket@{UDPSocket}}
+\doxysubsubsection{\texorpdfstring{recvFrom()}{recvFrom()}}
+{\footnotesize\ttfamily \label{class_u_d_p_socket_abcd5c064e2496bd8b1888fd4e1b68949} 
+int UDPSocket\+::recv\+From (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{int}]{buffer\+Len}{, }\item[{string \&}]{source\+Address}{, }\item[{unsigned short \&}]{source\+Port}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Read read up to buffer\+Len bytes data from this socket. The given buffer is where the data will be placed 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & buffer to receive data \\
+\hline
+{\em buffer\+Len} & maximum number of bytes to receive \\
+\hline
+{\em source\+Address} & address of datagram source \\
+\hline
+{\em source\+Port} & port of data source \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of bytes received and -\/1 for error 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if unable to receive datagram \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_u_d_p_socket_a41a3595e226f273953cbd38618af5d5b}\index{UDPSocket@{UDPSocket}!sendTo@{sendTo}}
+\index{sendTo@{sendTo}!UDPSocket@{UDPSocket}}
+\doxysubsubsection{\texorpdfstring{sendTo()}{sendTo()}}
+{\footnotesize\ttfamily \label{class_u_d_p_socket_a41a3595e226f273953cbd38618af5d5b} 
+void UDPSocket\+::send\+To (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{int}]{buffer\+Len}{, }\item[{const string \&}]{foreign\+Address}{, }\item[{unsigned short}]{foreign\+Port}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Send the given buffer as a UDP datagram to the specified address/port 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & buffer to be written \\
+\hline
+{\em buffer\+Len} & number of bytes to write \\
+\hline
+{\em foreign\+Address} & address (IP address or name) to send to \\
+\hline
+{\em foreign\+Port} & port number to send to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if send is successful 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if unable to send datagram \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_u_d_p_socket_a4dcfff33b45d1b84b5a602fc6f4a27f8}\index{UDPSocket@{UDPSocket}!setMulticastTTL@{setMulticastTTL}}
+\index{setMulticastTTL@{setMulticastTTL}!UDPSocket@{UDPSocket}}
+\doxysubsubsection{\texorpdfstring{setMulticastTTL()}{setMulticastTTL()}}
+{\footnotesize\ttfamily \label{class_u_d_p_socket_a4dcfff33b45d1b84b5a602fc6f4a27f8} 
+void UDPSocket\+::set\+Multicast\+TTL (\begin{DoxyParamCaption}\item[{unsigned char}]{multicast\+TTL}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Set the multicast TTL 
+\begin{DoxyParams}{Parameters}
+{\em multicast\+TTL} & multicast TTL \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if unable to set TTL \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Practical\+Socket.\+h\item 
+Practical\+Socket.\+cpp\end{DoxyCompactItemize}

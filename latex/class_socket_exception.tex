@@ -1,0 +1,64 @@
+\doxysection{Socket\+Exception Class Reference}
+\hypertarget{class_socket_exception}{}\label{class_socket_exception}\index{SocketException@{SocketException}}
+
+
+{\ttfamily \#include $<$Practical\+Socket.\+h$>$}
+
+Inheritance diagram for Socket\+Exception\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_socket_exception}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3}{Socket\+Exception}} (const string \&message, bool incl\+Sys\+Msg=false)  throw ()
+\item 
+\mbox{\hyperlink{class_socket_exception_a659557c899329aea01977c980c4db9b9}{\texorpdfstring{$\sim$}{\string~}\+Socket\+Exception}} ()  throw ()
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42}{what}} () const  throw ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Signals a problem with the execution of a socket call. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3}\index{SocketException@{SocketException}!SocketException@{SocketException}}
+\index{SocketException@{SocketException}!SocketException@{SocketException}}
+\doxysubsubsection{\texorpdfstring{SocketException()}{SocketException()}}
+{\footnotesize\ttfamily \label{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3} 
+Socket\+Exception\+::\+Socket\+Exception (\begin{DoxyParamCaption}\item[{const string \&}]{message}{, }\item[{bool}]{incl\+Sys\+Msg}{ = {\ttfamily false}}\end{DoxyParamCaption}) throw ( ) }
+
+Construct a \doxylink{class_socket_exception}{Socket\+Exception} with a explanatory message. 
+\begin{DoxyParams}{Parameters}
+{\em message} & explanatory message \\
+\hline
+{\em inc\+Sys\+Msg} & true if system message (from strerror(errno)) should be postfixed to the user provided message \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_socket_exception_a659557c899329aea01977c980c4db9b9}\index{SocketException@{SocketException}!````~SocketException@{\texorpdfstring{$\sim$}{\string~}SocketException}}
+\index{````~SocketException@{\texorpdfstring{$\sim$}{\string~}SocketException}!SocketException@{SocketException}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SocketException()}{\string~SocketException()}}
+{\footnotesize\ttfamily \label{class_socket_exception_a659557c899329aea01977c980c4db9b9} 
+Socket\+Exception\+::\texorpdfstring{$\sim$}{\string~}\+Socket\+Exception (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throw ( ) }
+
+Provided just to guarantee that no exceptions are thrown. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42}\index{SocketException@{SocketException}!what@{what}}
+\index{what@{what}!SocketException@{SocketException}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily \label{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42} 
+const char \texorpdfstring{$\ast$}{*} Socket\+Exception\+::what (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const throw ( ) }
+
+Get the exception message \begin{DoxyReturn}{Returns}
+exception message 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Practical\+Socket.\+h\item 
+Practical\+Socket.\+cpp\end{DoxyCompactItemize}

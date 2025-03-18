@@ -1,0 +1,164 @@
+\doxysection{Socket Class Reference}
+\hypertarget{class_socket}{}\label{class_socket}\index{Socket@{Socket}}
+
+
+{\ttfamily \#include $<$Practical\+Socket.\+h$>$}
+
+Inheritance diagram for Socket\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_socket}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket_aeac4eb6379a543d38ed88977d3b6630a}{\texorpdfstring{$\sim$}{\string~}\+Socket}} ()
+\item 
+string \mbox{\hyperlink{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}{get\+Local\+Address}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+unsigned short \mbox{\hyperlink{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}{get\+Local\+Port}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_socket_a773fe4a35146002de76952e16fdebcfa}{set\+Local\+Port}} (unsigned short local\+Port)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}{set\+Local\+Address\+And\+Port}} (const string \&local\+Address, unsigned short local\+Port=0)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_socket_ac5060aeb501044044351d5a85b3fc95f}{clean\+Up}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+static unsigned short \mbox{\hyperlink{class_socket_a982c63b25c5b756321a74074a275adbc}{resolve\+Service}} (const string \&service, const string \&protocol="{}tcp"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_socket_a53e00027bab2125a2b407914c6148589}\label{class_socket_a53e00027bab2125a2b407914c6148589} 
+{\bfseries Socket} (int type, int protocol)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+\Hypertarget{class_socket_a6a2609eef6559336a595a336f138d395}\label{class_socket_a6a2609eef6559336a595a336f138d395} 
+{\bfseries Socket} (int sock\+Desc)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_socket_ad5704d2fdfb062139e1f88831617bbfb}\label{class_socket_ad5704d2fdfb062139e1f88831617bbfb} 
+int {\bfseries sock\+Desc}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class representing basic communication endpoint 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_socket_aeac4eb6379a543d38ed88977d3b6630a}\index{Socket@{Socket}!````~Socket@{\texorpdfstring{$\sim$}{\string~}Socket}}
+\index{````~Socket@{\texorpdfstring{$\sim$}{\string~}Socket}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Socket()}{\string~Socket()}}
+{\footnotesize\ttfamily \label{class_socket_aeac4eb6379a543d38ed88977d3b6630a} 
+Socket\+::\texorpdfstring{$\sim$}{\string~}\+Socket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Close and deallocate this socket 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_socket_ac5060aeb501044044351d5a85b3fc95f}\index{Socket@{Socket}!cleanUp@{cleanUp}}
+\index{cleanUp@{cleanUp}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{cleanUp()}{cleanUp()}}
+{\footnotesize\ttfamily \label{class_socket_ac5060aeb501044044351d5a85b3fc95f} 
+void Socket\+::clean\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) \hspace{0.3cm}{\ttfamily [static]}}
+
+If Win\+Sock, unload the Win\+Sock DLLs; otherwise do nothing. We ignore this in our sample client code but include it in the library for completeness. If you are running on Windows and you are concerned about DLL resource consumption, call this after you are done with all \doxylink{class_socket}{Socket} instances. If you execute this on Windows while some instance of \doxylink{class_socket}{Socket} exists, you are toast. For portability of client code, this is an empty function on non-\/\+Windows platforms so you can always include it. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & buffer to receive the data \\
+\hline
+{\em buffer\+Len} & maximum number of bytes to read into buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of bytes read, 0 for EOF, and -\/1 for error 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown Win\+Sock clean up fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}\index{Socket@{Socket}!getLocalAddress@{getLocalAddress}}
+\index{getLocalAddress@{getLocalAddress}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{getLocalAddress()}{getLocalAddress()}}
+{\footnotesize\ttfamily \label{class_socket_a0fca07bdfa97874fba1a17995ed7cda3} 
+string Socket\+::get\+Local\+Address (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Get the local address \begin{DoxyReturn}{Returns}
+local address of socket 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if fetch fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}\index{Socket@{Socket}!getLocalPort@{getLocalPort}}
+\index{getLocalPort@{getLocalPort}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{getLocalPort()}{getLocalPort()}}
+{\footnotesize\ttfamily \label{class_socket_ae01143b667d69483a2f53d0f4ce7eeed} 
+unsigned short Socket\+::get\+Local\+Port (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Get the local port \begin{DoxyReturn}{Returns}
+local port of socket 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if fetch fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_socket_a982c63b25c5b756321a74074a275adbc}\index{Socket@{Socket}!resolveService@{resolveService}}
+\index{resolveService@{resolveService}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{resolveService()}{resolveService()}}
+{\footnotesize\ttfamily \label{class_socket_a982c63b25c5b756321a74074a275adbc} 
+unsigned short Socket\+::resolve\+Service (\begin{DoxyParamCaption}\item[{const string \&}]{service}{, }\item[{const string \&}]{protocol}{ = {\ttfamily "{}tcp"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Resolve the specified service for the specified protocol to the corresponding port number in host byte order 
+\begin{DoxyParams}{Parameters}
+{\em service} & service to resolve (e.\+g., "{}http"{}) \\
+\hline
+{\em protocol} & protocol of service to resolve. Default is "{}tcp"{}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}\index{Socket@{Socket}!setLocalAddressAndPort@{setLocalAddressAndPort}}
+\index{setLocalAddressAndPort@{setLocalAddressAndPort}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{setLocalAddressAndPort()}{setLocalAddressAndPort()}}
+{\footnotesize\ttfamily \label{class_socket_aa6b986410bc2e606ba27d01fa7cb8836} 
+void Socket\+::set\+Local\+Address\+And\+Port (\begin{DoxyParamCaption}\item[{const string \&}]{local\+Address}{, }\item[{unsigned short}]{local\+Port}{ = {\ttfamily 0}}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Set the local port to the specified port and the local address to the specified address. If you omit the port, a random port will be selected. 
+\begin{DoxyParams}{Parameters}
+{\em local\+Address} & local address \\
+\hline
+{\em local\+Port} & local port \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if setting local port or address fails \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_socket_a773fe4a35146002de76952e16fdebcfa}\index{Socket@{Socket}!setLocalPort@{setLocalPort}}
+\index{setLocalPort@{setLocalPort}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{setLocalPort()}{setLocalPort()}}
+{\footnotesize\ttfamily \label{class_socket_a773fe4a35146002de76952e16fdebcfa} 
+void Socket\+::set\+Local\+Port (\begin{DoxyParamCaption}\item[{unsigned short}]{local\+Port}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Set the local port to the specified port and the local address to any interface 
+\begin{DoxyParams}{Parameters}
+{\em local\+Port} & local port \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if setting local port fails \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Practical\+Socket.\+h\item 
+Practical\+Socket.\+cpp\end{DoxyCompactItemize}

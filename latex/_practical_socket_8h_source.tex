@@ -1,0 +1,146 @@
+\doxysection{Practical\+Socket.\+h}
+\hypertarget{_practical_socket_8h_source}{}\label{_practical_socket_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ C++\ sockets\ on\ Unix\ and\ Windows}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2002}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ This\ program\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ the\ Free\ Software\ Foundation;\ either\ version\ 2\ of\ the\ License,\ or}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ \ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ \ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ \ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ \ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ \ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ \ \ along\ with\ this\ program;\ if\ not,\ write\ to\ the\ Free\ Software}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ \ \ Foundation,\ Inc.,\ 59\ Temple\ Place,\ Suite\ 330,\ Boston,\ MA\ \ 02111-\/1307\ \ USA}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ \_\_PRACTICALSOCKET\_INCLUDED\_\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \_\_PRACTICALSOCKET\_INCLUDED\_\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <string>}\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ string}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <exception>}\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ For\ exception\ class}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_socket_exception}{SocketException}}\ :\ \textcolor{keyword}{public}\ exception\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{class_socket_exception_abb5bcecd9d9e20868c237ec5a82cf5c3}{SocketException}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&message,\ \textcolor{keywordtype}{bool}\ inclSysMsg\ =\ \textcolor{keyword}{false})\ \textcolor{keywordflow}{throw}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{class_socket_exception_a659557c899329aea01977c980c4db9b9}{\string~SocketException}}()\ \textcolor{keywordflow}{throw}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{class_socket_exception_a534b0625abe62cad2bae94758aa6eb42}{what}}()\ \textcolor{keyword}{const}\ \textcolor{keywordflow}{throw}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{string}\ userMessage;\ \ \textcolor{comment}{//\ Exception\ message}}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_socket}{Socket}}\ \{}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{class_socket_aeac4eb6379a543d38ed88977d3b6630a}{\string~Socket}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}{getLocalAddress}}()\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}{getLocalPort}}()\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_socket_a773fe4a35146002de76952e16fdebcfa}{setLocalPort}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ localPort)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}{setLocalAddressAndPort}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&localAddress,\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ localPort\ =\ 0)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00112\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_socket_ac5060aeb501044044351d5a85b3fc95f}{cleanUp}}()\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00120\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{class_socket_a982c63b25c5b756321a74074a275adbc}{resolveService}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&service,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&protocol\ =\ \textcolor{stringliteral}{"{}tcp"{}});}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00124\ \ \ \textcolor{comment}{//\ Prevent\ the\ user\ from\ trying\ to\ use\ value\ semantics\ on\ this\ object}}
+\DoxyCodeLine{00125\ \ \ \mbox{\hyperlink{class_socket}{Socket}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_socket}{Socket}}\ \&sock);}
+\DoxyCodeLine{00126\ \ \ \textcolor{keywordtype}{void}\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_socket}{Socket}}\ \&sock);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00129\ \ \ \textcolor{keywordtype}{int}\ sockDesc;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Socket\ descriptor}}
+\DoxyCodeLine{00130\ \ \ \mbox{\hyperlink{class_socket}{Socket}}(\textcolor{keywordtype}{int}\ type,\ \textcolor{keywordtype}{int}\ protocol)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00131\ \ \ \mbox{\hyperlink{class_socket}{Socket}}(\textcolor{keywordtype}{int}\ sockDesc);}
+\DoxyCodeLine{00132\ \};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_communicating_socket}{CommunicatingSocket}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_socket}{Socket}}\ \{}
+\DoxyCodeLine{00138\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communicating_socket_a9192374d9baab8e189860aa8d913683c}{connect}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&foreignAddress,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ foreignPort)}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00156\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_communicating_socket_aca4e86085c064641e86ae24ea29bbb94}{send}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buffer,\ \textcolor{keywordtype}{int}\ bufferLen)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00166\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_communicating_socket_a7cf1fd470c0060171b68df9f68c7bd01}{recv}}(\textcolor{keywordtype}{void}\ *buffer,\ \textcolor{keywordtype}{int}\ bufferLen)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00173\ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_communicating_socket_a13f9eca30ef56836cf23c163c848c09e}{getForeignAddress}}()\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00180\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{class_communicating_socket_a184fbb4775184b87ebd886a5587eb1a3}{getForeignPort}}()\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00183\ \ \ \mbox{\hyperlink{class_communicating_socket}{CommunicatingSocket}}(\textcolor{keywordtype}{int}\ type,\ \textcolor{keywordtype}{int}\ protocol)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00184\ \ \ \mbox{\hyperlink{class_communicating_socket}{CommunicatingSocket}}(\textcolor{keywordtype}{int}\ newConnSD);}
+\DoxyCodeLine{00185\ \};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_c_p_socket}{TCPSocket}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_communicating_socket}{CommunicatingSocket}}\ \{}
+\DoxyCodeLine{00191\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00196\ \ \ \mbox{\hyperlink{class_t_c_p_socket_a7a50427a401d1a6f3209d51818bad901}{TCPSocket}}()\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00205\ \ \ \mbox{\hyperlink{class_t_c_p_socket_a7a50427a401d1a6f3209d51818bad901}{TCPSocket}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&foreignAddress,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ foreignPort)\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00209\ \ \ \textcolor{comment}{//\ Access\ for\ TCPServerSocket::accept()\ connection\ creation}}
+\DoxyCodeLine{00210\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_c_p_server_socket}{TCPServerSocket}};}
+\DoxyCodeLine{00211\ \ \ \mbox{\hyperlink{class_t_c_p_socket_a7a50427a401d1a6f3209d51818bad901}{TCPSocket}}(\textcolor{keywordtype}{int}\ newConnSD);}
+\DoxyCodeLine{00212\ \};}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00217\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_c_p_server_socket}{TCPServerSocket}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_socket}{Socket}}\ \{}
+\DoxyCodeLine{00218\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00228\ \ \ \mbox{\hyperlink{class_t_c_p_server_socket_ae559a3154527d09fe14a8e5ee1f53d7a}{TCPServerSocket}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ localPort,\ \textcolor{keywordtype}{int}\ queueLen\ =\ 5)\ }
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00240\ \ \ \mbox{\hyperlink{class_t_c_p_server_socket_ae559a3154527d09fe14a8e5ee1f53d7a}{TCPServerSocket}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&localAddress,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ localPort,}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ queueLen\ =\ 5)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00248\ \ \ \mbox{\hyperlink{class_t_c_p_socket}{TCPSocket}}\ *\mbox{\hyperlink{class_t_c_p_server_socket_a1d161137e1b069de7a7bfc14d3f8212c}{accept}}()\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00251\ \ \ \textcolor{keywordtype}{void}\ setListen(\textcolor{keywordtype}{int}\ queueLen)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00252\ \};}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00257\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_u_d_p_socket}{UDPSocket}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_communicating_socket}{CommunicatingSocket}}\ \{}
+\DoxyCodeLine{00258\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00263\ \ \ \mbox{\hyperlink{class_u_d_p_socket_a4f86f3023f5a08f6355802599a10e100}{UDPSocket}}()\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00270\ \ \ \mbox{\hyperlink{class_u_d_p_socket_a4f86f3023f5a08f6355802599a10e100}{UDPSocket}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ localPort)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00278\ \ \ \mbox{\hyperlink{class_u_d_p_socket_a4f86f3023f5a08f6355802599a10e100}{UDPSocket}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&localAddress,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ localPort)\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00286\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_d_p_socket_a7482e8e61cef160e1a7c0d6ac15c01be}{disconnect}}()\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00298\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_d_p_socket_a41a3595e226f273953cbd38618af5d5b}{sendTo}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buffer,\ \textcolor{keywordtype}{int}\ bufferLen,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&foreignAddress,}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ foreignPort)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00311\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_u_d_p_socket_abcd5c064e2496bd8b1888fd4e1b68949}{recvFrom}}(\textcolor{keywordtype}{void}\ *buffer,\ \textcolor{keywordtype}{int}\ bufferLen,\ \textcolor{keywordtype}{string}\ \&sourceAddress,\ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \&sourcePort)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00319\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_d_p_socket_a4dcfff33b45d1b84b5a602fc6f4a27f8}{setMulticastTTL}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ multicastTTL)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00326\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_d_p_socket_a1b20c1e8bd49a9bd9b53dd4f1c8d4c11}{joinGroup}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&multicastGroup)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00333\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_u_d_p_socket_a78835eaeca8a5ac039b4579c795e3640}{leaveGroup}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&multicastGroup)\ \textcolor{keywordflow}{throw}(\mbox{\hyperlink{class_socket_exception}{SocketException}});}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00336\ \ \ \textcolor{keywordtype}{void}\ setBroadcast();}
+\DoxyCodeLine{00337\ \};}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

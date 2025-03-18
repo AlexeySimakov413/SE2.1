@@ -1,0 +1,50 @@
+\doxysection{mycomplex.\+h}
+\hypertarget{mycomplex_8h_source}{}\label{mycomplex_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_MY\_COMPLEX\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_MY\_COMPLEX\_H\_}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_complex}{Complex}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{double}\ Re;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{double}\ Im;\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}(\textcolor{keywordtype}{double}\ aRe=0,\ \textcolor{keywordtype}{double}\ aIm=0);}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_complex}{Complex}}\&);}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_complex}{\string~Complex}}();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ Set(\textcolor{keywordtype}{double}\ aRe,\ \textcolor{keywordtype}{double}\ aIm=0);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{operator}\ double();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ abs();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{friend}\ istream\&\ operator>>(istream\&,\mbox{\hyperlink{class_complex}{Complex}}\&);\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{friend}\ ostream\&\ operator<<\ (ostream\&,\ \mbox{\hyperlink{class_complex}{Complex}}\ \&\ );}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ operator+\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_complex}{Complex}}\&);}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ operator-\/\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_complex}{Complex}}\&);}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ operator+\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_complex}{Complex}}\ operator+\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_complex}{Complex}}\&);}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ operator-\/\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_complex}{Complex}}\ operator-\/\ (\textcolor{keyword}{const}\ \ \textcolor{keywordtype}{double}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_complex}{Complex}}\&);}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ operator*\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_complex}{Complex}}\&);}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ operator*\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_complex}{Complex}}\ operator*\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_complex}{Complex}}\&);}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ operator/\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\&\ operator+=\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_complex}{Complex}}\&);}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ \ \&\ \ operator-\/=\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_complex}{Complex}}\&);}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\&\ operator*=\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_complex}{Complex}}\&\ );\ \ \mbox{\hyperlink{class_complex}{Complex}}\&\ operator\ \ +=\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&);}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\&\ operator-\/=\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&);}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ \ \&operator\ \ *=(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \ \&\ );}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ \ \&\ operator\ /=(\ \textcolor{keyword}{const}\ \ \ \textcolor{keywordtype}{double}\ \&\ );}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\&\ operator\ =\ (\ \ \textcolor{keyword}{const}\ \ \ \mbox{\hyperlink{class_complex}{Complex}}\&);}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_complex}{Complex}}\ \&\ operator=\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&);}
+\DoxyCodeLine{00044\ \ \ \ \ \};}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

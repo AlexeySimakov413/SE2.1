@@ -1,0 +1,121 @@
+\doxysection{TCPServer\+Socket Class Reference}
+\hypertarget{class_t_c_p_server_socket}{}\label{class_t_c_p_server_socket}\index{TCPServerSocket@{TCPServerSocket}}
+
+
+{\ttfamily \#include $<$Practical\+Socket.\+h$>$}
+
+Inheritance diagram for TCPServer\+Socket\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_t_c_p_server_socket}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_t_c_p_server_socket_ae559a3154527d09fe14a8e5ee1f53d7a}{TCPServer\+Socket}} (unsigned short local\+Port, int queue\+Len=5)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+\mbox{\hyperlink{class_t_c_p_server_socket_a3908fecb1b038f7c14fcc7726f54d01d}{TCPServer\+Socket}} (const string \&local\+Address, unsigned short local\+Port, int queue\+Len=5)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+\mbox{\hyperlink{class_t_c_p_socket}{TCPSocket}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_t_c_p_server_socket_a1d161137e1b069de7a7bfc14d3f8212c}{accept}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_socket}{Socket}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_socket_aeac4eb6379a543d38ed88977d3b6630a}{\texorpdfstring{$\sim$}{\string~}\+Socket}} ()
+\item 
+string \mbox{\hyperlink{class_socket_a0fca07bdfa97874fba1a17995ed7cda3}{get\+Local\+Address}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+unsigned short \mbox{\hyperlink{class_socket_ae01143b667d69483a2f53d0f4ce7eeed}{get\+Local\+Port}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_socket_a773fe4a35146002de76952e16fdebcfa}{set\+Local\+Port}} (unsigned short local\+Port)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+void \mbox{\hyperlink{class_socket_aa6b986410bc2e606ba27d01fa7cb8836}{set\+Local\+Address\+And\+Port}} (const string \&local\+Address, unsigned short local\+Port=0)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_socket}{Socket}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_socket_ac5060aeb501044044351d5a85b3fc95f}{clean\+Up}} ()  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+static unsigned short \mbox{\hyperlink{class_socket_a982c63b25c5b756321a74074a275adbc}{resolve\+Service}} (const string \&service, const string \&protocol="{}tcp"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_socket}{Socket}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Socket} (int type, int protocol)  throw (\mbox{\hyperlink{class_socket_exception}{Socket\+Exception}})
+\item 
+{\bfseries Socket} (int sock\+Desc)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_socket}{Socket}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries sock\+Desc}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TCP socket class for servers 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_t_c_p_server_socket_ae559a3154527d09fe14a8e5ee1f53d7a}\index{TCPServerSocket@{TCPServerSocket}!TCPServerSocket@{TCPServerSocket}}
+\index{TCPServerSocket@{TCPServerSocket}!TCPServerSocket@{TCPServerSocket}}
+\doxysubsubsection{\texorpdfstring{TCPServerSocket()}{TCPServerSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_t_c_p_server_socket_ae559a3154527d09fe14a8e5ee1f53d7a} 
+TCPServer\+Socket\+::\+TCPServer\+Socket (\begin{DoxyParamCaption}\item[{unsigned short}]{local\+Port}{, }\item[{int}]{queue\+Len}{ = {\ttfamily 5}}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Construct a TCP socket for use with a server, accepting connections on the specified port on any interface 
+\begin{DoxyParams}{Parameters}
+{\em local\+Port} & local port of server socket, a value of zero will give a system-\/assigned unused port \\
+\hline
+{\em queue\+Len} & maximum queue length for outstanding connection requests (default 5) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if unable to create TCP server socket \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_t_c_p_server_socket_a3908fecb1b038f7c14fcc7726f54d01d}\index{TCPServerSocket@{TCPServerSocket}!TCPServerSocket@{TCPServerSocket}}
+\index{TCPServerSocket@{TCPServerSocket}!TCPServerSocket@{TCPServerSocket}}
+\doxysubsubsection{\texorpdfstring{TCPServerSocket()}{TCPServerSocket()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_t_c_p_server_socket_a3908fecb1b038f7c14fcc7726f54d01d} 
+TCPServer\+Socket\+::\+TCPServer\+Socket (\begin{DoxyParamCaption}\item[{const string \&}]{local\+Address}{, }\item[{unsigned short}]{local\+Port}{, }\item[{int}]{queue\+Len}{ = {\ttfamily 5}}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Construct a TCP socket for use with a server, accepting connections on the specified port on the interface specified by the given address 
+\begin{DoxyParams}{Parameters}
+{\em local\+Address} & local interface (address) of server socket \\
+\hline
+{\em local\+Port} & local port of server socket \\
+\hline
+{\em queue\+Len} & maximum queue length for outstanding connection requests (default 5) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if unable to create TCP server socket \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_t_c_p_server_socket_a1d161137e1b069de7a7bfc14d3f8212c}\index{TCPServerSocket@{TCPServerSocket}!accept@{accept}}
+\index{accept@{accept}!TCPServerSocket@{TCPServerSocket}}
+\doxysubsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily \label{class_t_c_p_server_socket_a1d161137e1b069de7a7bfc14d3f8212c} 
+\mbox{\hyperlink{class_t_c_p_socket}{TCPSocket}} \texorpdfstring{$\ast$}{*} TCPServer\+Socket\+::accept (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) throw ( \mbox{\hyperlink{class_socket_exception}{Socket\+Exception}}) }
+
+Blocks until a new connection is established on this socket or error \begin{DoxyReturn}{Returns}
+new connection socket 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{class_socket_exception}{Socket\+Exception}} & thrown if attempt to accept a new connection fails \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Practical\+Socket.\+h\item 
+Practical\+Socket.\+cpp\end{DoxyCompactItemize}

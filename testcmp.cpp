@@ -1,38 +1,42 @@
-#include <iostream>
+#include <iostream> 
 #include "mycomplex.h"
 
 using namespace std;
 
-int main()
-{
-  //тестирование класса комплексных чисел
+int main() {
 
-Complex A,B(-4), C(23.0, 45.9);
+    // Создание объектов класса Complex
+    Complex A;          // Создание объекта A с значениями по умолчанию (Re = 0, Im = 0)
+    Complex B(-4);      // Создание объекта B с Re = -4, Im = 0
+    Complex C(23.0, 45.9); // Создание объекта C с Re = 23.0, Im = 45.9
 
-cout<<A <<"A:"<< A<<", B:" <<B <<", C:"<< C << endl; 
+    // Вывод значений объектов A, B и C
+    cout << A << " A: " << A << ", B: " << B << ", C: " << C << endl;
 
-A=B+C;
+    // Сложение объектов B и C, результат присваивается объекту A
+    A = B + C;
+    cout << "A = B + C, A = " << A << endl;
 
-cout<<"A=B+C,A="<< A <<endl;
+    // Вычитание объектов B и C, результат присваивается объекту M
+    Complex M = B - C;
+    cout << "M = B - C, M = " << M << endl;
 
-Complex M=B-C;
+    // Умножение объектов M и A, результат присваивается объекту N
+    Complex N = M * A;
+    cout << "N = M * A, N = " << N << endl;
 
-cout<< "M = B - C, M = " << M << endl;
+    // Деление объекта M на 4.45, результат присваивается объекту O
+    Complex O = M / 4.45;
+    cout << "O = M / 4.45, O = " << O << endl;
 
-Complex N=M*A;
+    // Создание объекта D для ввода пользователем
+    Complex D;
+    cout << "Enter complex number D = ";
+    cin >> D; // Ввод комплексного числа D
 
-cout<<"N*A="<<N<<endl;
+    // Сложение объектов C и D, затем добавление результата к объекту A
+    A += C + D;
+    cout << "D = " << D << "\nA = " << A << endl;
 
-Complex O =M/4.45;
-
-cout<<"O=M/4.45="<< O <<endl;
-
-Complex D;
-
-cout<<"Enter complex number D = "; cin >>D;
-
-A+=C+D;
-
-cout << "D = " << D << "\nA = " << A << endl;
-
-return 0;}
+    return 0; // Завершение программы
+}
